@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="keywords" content="bootstrap, bootstrap4"/>
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel="stylesheet"/>
+    <link th:href="@{/css/tiny-slider.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+    <title>Fastest Car</title>
+</head>
+
+<body>
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Fastest<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li><a class="nav-link" th:href="@{/shop}">Shop</a></li>
+                <li><a class="nav-link" th:href="@{/services}">Services</a></li>
+                <li><a class="nav-link" th:href="@{/about}">About us</a></li>
+                <li><a class="nav-link" th:href="@{/contact}">Contact us</a></li>
+            </ul>
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" th:href="@{/auth/login}"><img th:src="@{/images/user.svg}"></a></li>
+                <li><a class="nav-link" th:href="@{/cart}"><img th:src="@{/images/cart.svg}">
+                    <span class="badge bg-dark text-white ms-1 rounded-pill"
+                          th:text="${cart.itemsCart()}">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Header/Navigation -->
+
+<div class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <div>
+            <p class="navbar-brand">Admin account</p>
+        </div>
+
+
+        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <div class="col-6">
+                <div class="form-group">
+                    <form th:method="post" th:action="@{/logout}">
+                        <button class="btn btn-primary-hover-outline" type="submit" value="Выйти из системы">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start Contact Form -->
+<div class="untree_co-section">
+    <div class="container">
+        <div class="block">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-8 pb-4">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-6">
+                                <form th:method="GET" th:action="@{/item}">
+                                    <button class="btn btn-black btn-sm btn-block"
+                                            type="submit" value="Товары">Товары
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <form th:method="GET" th:action="@{/person}">
+                                    <button class="btn btn-black btn-sm btn-block"
+                                            type="submit" value="Person"> Person
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End Contact Form -->
+
+
+</body>
+</html>

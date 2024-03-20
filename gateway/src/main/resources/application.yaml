@@ -1,0 +1,40 @@
+#Config from GitHub
+spring:
+  application:
+    name: gateway
+  config:
+    import: configserver:http://localhost:8888
+
+
+
+## Actuator
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+#
+###Config local---------
+#server:
+#  port: 8765
+#spring:
+#  application:
+#    name: gateway
+#  cloud:
+#    gateway:
+##      routes:
+##        - id: all_requests
+##          uri: lb://shop
+##          predicates:
+##            - Path=/**
+##            - Method=**
+##          filters:
+##            - StripPrefix=1
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true

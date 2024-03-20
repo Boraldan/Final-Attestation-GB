@@ -1,0 +1,71 @@
+#Config from GitHub
+spring:
+  application:
+    name: shop
+  config:
+    import: configserver:http://localhost:8888
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: born17121982@gmail.com
+    password: ltpuiznhkjmssety
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+###-----------Config local -------------
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: shop
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2
+#  datasource:
+#    url: jdbc:h2:mem:born51
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ""
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+#  mvc:
+#    hiddenmethod:
+#      filter:
+#        enabled: true
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: born17121982@gmail.com
+#    password: ltpuiznhkjmssety
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls.enable: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+
+
+
+
